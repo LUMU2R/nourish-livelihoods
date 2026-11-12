@@ -1,8 +1,8 @@
 /* ===== EDIT YOUR LINKS HERE ===== */
 const LINKS = {
   facebook:  "",   // e.g. https://facebook.com/yourpage
-  instagram: "",   // e.g. https://instagram.com/yourhandle
-  tiktok:    "",   // e.g. https://tiktok.com/@yourhandle
+  twitter:   "",   // e.g. https://x.com/yourhandle
+  linkedin:  "",   // e.g. https://linkedin.com/company/yourpage
   whatsapp:  ""    // number with country code, digits only, e.g. 256700000000
 };
 const EMAIL = "hello@nourishlivelihoods.org";
@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const waUrl = wa ? `https://wa.me/${wa}?text=${encodeURIComponent("Hello Nourish Livelihoods, I would like to know more.")}` : "";
   $$("[data-social]").forEach(a => { const n = a.dataset.social, u = n === "whatsapp" ? waUrl : LINKS[n]; if (u) a.href = u; else a.addEventListener("click", e => e.preventDefault()); });
   $$("[data-wa]").forEach(a => { if (waUrl) a.href = waUrl; else a.addEventListener("click", e => e.preventDefault()); });
+  const gm = $("#gmore"); gm.onclick = () => { const o = $("#gallery").classList.toggle("open"); gm.firstChild.textContent = o ? "Show fewer photos " : "View more photos "; };
   $("#yr").textContent = new Date().getFullYear();
   // mobile menu
   const burger = $(".burger"), nav = $(".nav");
