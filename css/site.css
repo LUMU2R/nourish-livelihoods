@@ -106,3 +106,10 @@ figure{width:190px;background:#fff;border-radius:var(--r);overflow:hidden;box-sh
 .tm img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;background:var(--soft)}.tm-b{padding:16px 12px 20px}.tm h4{color:var(--g);font-size:19px;margin-bottom:8px}
 .tm span{display:inline-block;background:var(--y);color:var(--g2);font:600 13px Poppins;padding:4px 14px;border-radius:30px}
 .g.more{display:none}.gallery.open .g.more{display:block}.more-wrap{text-align:center;margin-top:26px}
+
+/* developer credit */
+.fbot{display:grid;gap:8px;justify-items:center}
+.credit{font:400 14px Nunito,sans-serif;color:#cfdccb;text-align:center;padding:6px 10px;border-radius:10px;transition:.2s}
+.credit b{color:var(--y)}.credit:hover{background:rgba(255,255,255,.08)}
+.mbox .btn{width:100%;justify-content:center;margin-bottom:10px}.dev-wa{background:#25d366;color:#fff}.dev-x{background:#111;color:#fff}
+.dev-close{color:var(--mut);font-size:14px;padding:8px}

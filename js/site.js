@@ -1,11 +1,12 @@
 /* ===== EDIT YOUR LINKS HERE ===== */
 const LINKS = {
-  facebook: "https://www.facebook.com/search/top?q=Najjuuko%20Joanitta", 
+  facebook: "https://www.facebook.com/search/top?q=Najjuuko%20Joanitta",
   twitter: "https://x.com/NJoanitta05",
   linkedin:
-    "https://www.linkedin.com/search/results/all/?keywords=Najjuuko%20Joanitta", 
+    "https://www.linkedin.com/search/results/all/?keywords=Najjuuko%20Joanitta",
   whatsapp: "256705163258",
 };
+const DEV = { whatsapp: "256704289284", twitter: "lumutweets" }; 
 const EMAIL = "hello@nourishlivelihoods.org";
 /* ================================ */
 const $ = (s, c = document) => c.querySelector(s),
@@ -31,6 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const o = $("#gallery").classList.toggle("open");
     gm.firstChild.textContent = o ? "Show fewer photos " : "View more photos ";
   };
+    const dm = $("#devmodal"), dw = DEV.whatsapp.replace(/\D/g, ""), dt = DEV.twitter.replace("@", "");
+  const devUrl = { whatsapp: dw ? `https://wa.me/${dw}?text=${encodeURIComponent("Hello, I saw your work on the Nourish Livelihoods website.")}` : "", twitter: dt ? `https://x.com/${dt}` : "" };
+  $$("[data-dev]").forEach(a => { const u = devUrl[a.dataset.dev]; if (u) a.href = u; else a.addEventListener("click", e => e.preventDefault()); });
+  $("#credit").onclick = () => dm.hidden = false;
+  $("#devclose").onclick = () => dm.hidden = true;
+  dm.onclick = e => { if (e.target === dm) dm.hidden = true; };
+  addEventListener("keydown", e => { if (e.key === "Escape") dm.hidden = true; });
   $("#yr").textContent = new Date().getFullYear();
   // mobile menu
   const burger = $(".burger"),
