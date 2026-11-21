@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gm.firstChild.textContent = o ? "Show fewer photos " : "View more photos ";
   };
     const dm = $("#devmodal"), dw = DEV.whatsapp.replace(/\D/g, ""), dt = DEV.twitter.replace("@", "");
-  const devUrl = { whatsapp: dw ? `https://wa.me/${dw}?text=${encodeURIComponent("Hello, I saw your work on the Nourish Livelihoods website.")}` : "", twitter: dt ? `https://x.com/${dt}` : "" };
+  const devUrl = { whatsapp: dw ? `https://wa.me/${dw}?text=${encodeURIComponent("Yoo, I saw your work on the Nourish Livelihoods website.")}` : "", twitter: dt ? `https://x.com/${dt}` : "" };
   $$("[data-dev]").forEach(a => { const u = devUrl[a.dataset.dev]; if (u) a.href = u; else a.addEventListener("click", e => e.preventDefault()); });
   $("#credit").onclick = () => dm.hidden = false;
   $("#devclose").onclick = () => dm.hidden = true;
